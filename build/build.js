@@ -78,7 +78,7 @@ catchphraseButton.addEventListener('click', async() => {
 });
 
 window.addEventListener('load', async() => {
-    let character = await getCharacter;
+    let character = await getCharacter();
     // on load, attempt to fetch this user's character
 
     // if this user turns out not to have a character
@@ -112,14 +112,15 @@ async function fetchAndDisplayCharacter() {
     // fetch the caracter from supabase
     const character = await getCharacter();
     // if the character has a head, display the head in the dom
+    console.log(character);
     if (character.head)
         headEl.style.backgroundImage = `url(../assets/${character.head}-head.png)`;
     // if the character has a middle, display the middle in the dom
     if (character.middle)
         middleEl.style.backgroundImage = `url(../assets/${character.middle}-middle.png)`;
     // if the character has a pants, display the pants in the dom
-    if (character.pants)
-        bottomEl.style.backgroundImage = `url(../assets/${character.pants}-pants.png)`;
+    if (character.bottom)
+        bottomEl.style.backgroundImage = `url(../assets/${character.bottom}-pants.png)`;
     // loop through catchphrases and display them to the dom (clearing out old dom if necessary)
     chatchphrasesEl.textContent = '';
 
