@@ -85,9 +85,9 @@ window.addEventListener('load', async() => {
     if (!character) {
         // create a new character with correct defaults for all properties (head, middle, bottom, catchphrases)
         const defaultCharacter = {
-            head: '',
-            middle: '',
-            bottom: '',
+            head: 'dog',
+            middle: 'dress',
+            bottom: 'leg',
             catchphrases: []
         };
 
